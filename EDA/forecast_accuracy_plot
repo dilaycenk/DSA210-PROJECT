@@ -1,0 +1,33 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(current_dir, "..", "Data", "forecast_sample.csv")
+
+df = pd.read_csv(csv_path)
+df['Error'] = abs(df['Actual_Temp'] - df['Forecast_Temp'])
+df['Year'] = pd.to_datetime(df['Date']).dt.year
+
+# 1. Visualization: Seasonal Comparison
+plt.figure(figsize=(12, 6))
+for season in ['Winter', 'Summer']:
+    subset = df[df['Season'] == season]
+    plt.scatter(subset['Date'], subset['Error'], label=f'{season} Errors')
+
+plt.title('Forecasting Errors in Extreme Weeks (2021-2025)')
+plt.xticks(rotation=45)
+plt.ylabel('Absolute Error (°C)')
+plt.legend()
+plt.tight_layout()
+plt.savefig(os.path.join(current_dir, 'seasonal_errors.png'))
+
+# 2. Visualization: Annual Error Trend
+plt.figure(figsize=(10, 5))
+yearly_error = df.groupby('Year')['Error'].mean()
+plt.plot(yearly_error.index, yearly_error.values, marker='s', color='red', linewidth=2)
+plt.title('Average Forecasting Error Trend (Extreme Events Only)')
+plt.ylabel('Mean Absolute Error (°C)')
+plt.grid(True, alpha=0.3)
+plt.savefig(os.path.join(current_dir, 'annual_error_trend.png'))
+plt.show()

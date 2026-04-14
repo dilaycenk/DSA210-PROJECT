@@ -1,0 +1,10 @@
+# Raw data file
+global_warming_data.nc
+
+# Python temporary files
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store
+Thumbs.db
