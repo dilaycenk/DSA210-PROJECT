@@ -46,7 +46,7 @@ results = pd.DataFrame({
 })
 results.to_csv(os.path.join(current_dir, 'predictions_vs_actual.csv'), index=False)
 
-# --- VISUALIZATION SECTION ---
+# VISUALIZATION SECTION
 
 # Figure 1: Feature Importance Plot
 plt.figure(figsize=(10, 6))
