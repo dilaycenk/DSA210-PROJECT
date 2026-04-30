@@ -17,4 +17,3 @@ plt.grid(True, alpha=0.3)
 
 # Save the plot
 plt.savefig(os.path.join(current_dir, 'tech_improvement.png'))
-print("Global technology improvement plot saved in /EDA.")
