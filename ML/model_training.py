@@ -4,6 +4,19 @@ from sklearn.ensemble import RandomForestRegressor
 import joblib
 import os
 
+# Function to create time-lagged features for environmental analysis
+def add_lag_features(df, target_col, lag_years=[1, 2]):
+    # Create historical memory by shifting environmental and tech data
+    # to analyze if past weather patterns influence future technological investments
+    df_lagged = df.copy()
+    for lag in lag_years:
+        # Generate new features shifted by the specified number of years
+        df_lagged[f'temp_lag_{lag}'] = df_lagged['temperature'].shift(lag)
+        df_lagged[f'tech_invest_lag_{lag}'] = df_lagged[target_col].shift(lag)
+    
+    # Remove rows containing NaN values resulting from the shift operation
+    return df_lagged.dropna()
+
 # Set up file paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_dir, '..', 'Data', 'forecast_sample.csv')
