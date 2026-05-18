@@ -35,7 +35,7 @@ To ensure scientific accuracy and high-resolution temporal analysis, the followi
 
 In this project, rather than using the entire ERA5 dataset, an **"Extreme Event Sampling"** strategy was implemented to isolate and measure the impact of climate shocks on technological adaptation.
 
-* **Extreme Value Filtering (Thresholding):** Decades of ERA5 temperature data were filtered to identify "Extreme Climate Episodes” defined as events exceeding -2 and +2 standard deviations from the seasonal mean (heatwaves or sudden frost). The analysis focused exclusively on these critical periods rather than typical years.
+* **Extreme Value Filtering (Thresholding):** Decades of ERA5 temperature data were filtered to identify "Extreme Climate Episodes” defined as events exceeding $\pm2$ standard deviations from the seasonal mean (heatwaves or sudden frost). The analysis focused exclusively on these critical periods rather than typical years.
 * **Temporal Synchronization (ERA5 to Tech-Indices):** Hourly and daily raw data from ERA5 were down sampled into daily averages to ensure perfect alignment with technological investment indices and market data.
 
 ---
