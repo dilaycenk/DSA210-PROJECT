@@ -60,7 +60,7 @@ In this project, rather than using the entire ERA5 dataset, an **"Extreme Event 
 
 * **Model Comparison (Machine Learning):** Evaluated **Linear Regression, Decision Trees**, and **Random Forest** to determine the most efficient architecture for predicting tech-sector adaptation.
 
-* ![Actual vs. Predicted Temperature](ML/figures/actual_vs_predicted.png)
+  ![Actual vs. Predicted Temperature](ML/figures/actual_vs_predicted.png)
 
 * **Feature Engineering:** Developed **Lag Features** (e.g., `Temp_Lag_7`, `Temp_Lag_30`) using the CDS API data to model the "market memory” the delay between environmental stress and technological response.
 
