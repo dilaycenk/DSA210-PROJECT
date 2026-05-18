@@ -42,7 +42,7 @@ In this project, rather than using the entire ERA5 dataset, an **"Extreme Event 
 
 ## Data Analysis: Techniques & Stages
 
-* **Exploratory Data Analysis (EDA):** Identified structural breaks in climate trends. Confirmed a strong correlation between temperature volatility and technology-sector activity. 
+* **Exploratory Data Analysis (EDA):** Identified structural breaks in climate trends. Confirmed a strong correlation between temperature volatility and technology-sector activity. All related codes are stored in the `EDA/` directory.
 
   #### 1. Annual Error Trend Analysis
   ![Annual Error Trend](EDA/annual_error_trend.png)
@@ -56,9 +56,9 @@ In this project, rather than using the entire ERA5 dataset, an **"Extreme Event 
   ![Tech Improvement](EDA/tech_improvement.png)
   * **Analysis:** This plot tracks the growth and investment patterns within the technological sector alongside climate anomaly intervals. It shows empirical evidence of the "catalyst effect," where environmental shifts accelerate tech-sector adaptation and structural scaling.
 
-* **Statistical Hypothesis Testing:** Conducted **Two-sample t-tests** to analyze market reactions before and after major climatic anomalies (modeled after the snow warning observation) and **Pearson Correlation** to measure the strength of the linear relationship between ERA5 temperature anomalies and the technology index.
+* **Statistical Hypothesis Testing:** Conducted **Two-sample t-tests** to analyze market reactions before and after major climatic anomalies (modeled after the snow warning observation) and **Pearson Correlation** to measure the strength of the linear relationship between ERA5 temperature anomalies and the technology index. Related code is `statistical_tests.py/` in the `HypothesisTests/` directory.
 
-* **Model Comparison (Machine Learning):** Evaluated **Linear Regression, Decision Trees**, and **Random Forest** to determine the most efficient architecture for predicting tech-sector adaptation.
+* **Model Comparison (Machine Learning):** Evaluated **Linear Regression, Decision Trees**, and **Random Forest** to determine the most efficient architecture for predicting tech-sector adaptation. All related codes are in the `ML/` directory.
 
   ![Actual vs. Predicted Temperature](ML/figures/actual_vs_predicted.png)
 
